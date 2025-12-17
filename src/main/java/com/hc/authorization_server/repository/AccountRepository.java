@@ -17,7 +17,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 	
 	//"SELECT a FROM Account a WHERE a.identifier = :identifier"
 	
-	@Query(value = "select * from get_account_byid_authorities(:identifier)", nativeQuery = true)
+	@Query(value = "select * from get_account_authorities_by_id(:identifier)", nativeQuery = true)
 	Optional<Account> findByIdentifier(@Param("identifier") UUID identifier);
 }
 
